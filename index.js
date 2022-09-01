@@ -2,15 +2,10 @@ const express = require('express');
 
 const app = express();
 
-//ROTA GET DE TESTE:
-app.get('/', (req, res)=>{
-    res.send('REPOSTA DA ROTA RAIZ');
-});
+//IMPORTAÇÃO DO ARQUIVO DE ROTAS DE LIVROS
+const livrosController = require('./controller/LivroController');
 
-//ROTA GET DE LISTAGEM DE DENTISTAS:
-app.get('/listagemDentistas', (req, res)=>{
-    res.send('REPOSTA DA ROTA DE LISTAGEM DE DENTISTAS!');
-});
+app.use('/', livrosController);
 
 app.listen(3000, ()=>{
     console.log('APLICAÇÃO RODANDO EM - http://localhost:3000');
