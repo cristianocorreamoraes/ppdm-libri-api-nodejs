@@ -1,6 +1,8 @@
 //IMPORTA O MÓDULO DO EXPRESS
 const express = require('express');
 
+const livroModel = require('../model/LivroModel');
+
 //CONFIGUAR UM RECURSO DE ROTEAMENTO (Router)
 const router = express.Router();
 
@@ -11,6 +13,7 @@ router.get('/listarLivros', (req, res)=>{
 
 //ROTA DE CADASTRO DE LIVROS
 router.post('/cadastrarLivros', (req, res)=>{
+    console.log(req.body);
     res.send('ROTA DE CADASTRO DE LIVROS');
 });
 

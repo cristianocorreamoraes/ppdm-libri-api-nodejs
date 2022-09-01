@@ -2,6 +2,8 @@ const express = require('express');
 
 const app = express();
 
+app.use(express.json());
+
 //IMPORTAÇÃO DO ARQUIVO DE ROTAS DE LIVROS
 const livrosController = require('./controller/LivroController');
 
